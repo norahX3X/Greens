@@ -1,0 +1,16 @@
+<h1>Pages#home</h1>
+
+<% if current_user %>
+    <%= current_user.id %>
+<<<<<<< HEAD
+=======
+    user here
+>>>>>>> f93688c972f296a2fefbece117ac0b73194046db
+    <%= link_to  "Sing out", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to  "Sign up", new_user_registration_path %>
+    <%= link_to  "Sign in", new_user_session_path %>
+<% end %>
+
+
+
