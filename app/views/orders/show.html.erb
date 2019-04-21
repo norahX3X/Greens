@@ -1,0 +1,18 @@
+<h1>Orders#show</h1>
+
+
+<h1><%= @order.total %></h1>
+<h1><%= @order.quantity %></h1>
+<h1><%= @order.shippingID %></h1>
+<%= @orderDetailsList.length %>
+<% @orderDetailsList.each do |orderD| %>
+ <ul>
+    <li><%= link_to orderD.productID.name, order_path(orderD.orderID) %></li>
+    <li><%= link_to orderD.productID.image, order_path(orderD.orderID) %></li> 
+     <li><%= orderD.price  %></li>
+      <li><%= orderD.amount  %></li>
+     
+  </ul>
+
+<% end %>
+
