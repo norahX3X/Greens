@@ -1,0 +1,16 @@
+<%= form_for @product do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %> <br>
+
+    <%= f.label :image %>
+    <%= f.url_field :image %><br>
+
+    <%= f.label :quantity %>
+    <%= f.text_field :quantity %><br>
+
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %><br>
+
+    <%= f.submit "Submit" %>
+
+<% end %>
