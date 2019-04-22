@@ -1,7 +1,12 @@
 <h1> Products </h1>
 <% @products.each do |product| %>
+
+
     <li>
+        <img src="<%=product.image%>" alt="">
+
     <%= link_to product.name, product_path(product) %>
+
     </li>
 
     
