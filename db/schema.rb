@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_074613) do
+ActiveRecord::Schema.define(version: 2019_04_22_084551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "cart_id"
+    t.integer "product_id"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "total_items"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -51,15 +65,25 @@ ActiveRecord::Schema.define(version: 2019_04_22_074613) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.string "quantity"
   end
 
   create_table "sellers", force: :cascade do |t|
     t.string "name"
     t.string "farmerName"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shipping_infos", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "zip"
+    t.string "adress"
+    t.string "city"
+    t.string "phone_num"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
