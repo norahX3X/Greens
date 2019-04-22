@@ -6,5 +6,4 @@ class User < ApplicationRecord
   has_one :cart
   has_many :ordrs
   has_many :shipping_infos
-  has_many :products, through: :product_infos
 end

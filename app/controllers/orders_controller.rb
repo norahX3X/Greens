@@ -11,7 +11,9 @@ class OrdersController < ApplicationController
     @orderDetailsList =[]
     # push the ones with orderID equal to the one we want 
     orderDetails.each do |orderD|
-    if(orderD.orderID == @order.id)
+      p orderD.order_id
+    if(orderD.order_id == @order.id)
+      p "yes"
       @orderDetailsList.push(orderD)
     end
   end
@@ -27,6 +29,6 @@ class OrdersController < ApplicationController
 
   private 
     def order_params
-        params.require(:Order).permit( :total, :quantity , :shippingID )
+        params.require(:Order).permit( :total, :quantity , :shipping_id )
     end
 end
