@@ -1,15 +1,135 @@
-<h1> Products </h1>
-<% @products.each do |product| %>
+
+<div class="container">
+        <div class="card-columns">
+            <% @products.each do |product| %>
+                <div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="<%= product.image %>" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title"><%= product.name %></p>
+                                <div>
+                                 <%= link_to "More info", product_path(product) %>
+                                </div>
+                        </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+
+<div class="sidenav">
+ <% @categories.each do |category| %>
+<%= p category.id %>
+  <a href="#" id="<%=category.name%>" data-id="<%=category.id%>"> <%= category.name %></a>
+  
+              <% end %>
+
+</div>
+
+<script>
+ $('#fruite').click(function(e){
+     e.preventDefault()
+     
+        let pro = <%= @products.to_json.html_safe %> 
+        
+        let filtered = pro.filter(element => element.category_id == 0)
+     console.log(filtered)
+    
+    //call the container card-columns
+    $('.card-columns').empty()
+    
+    filtered.forEach(product => {
+        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title">${product.name}</p>
+                                <div>
+                                 
+                                </div>
+                        </div>
+                </div>`
+        $('.card-columns').append(html)
+    })
+    
+ })
 
 
-    <li>
-        <img src="<%=product.image%>" alt="">
+$('#vegetables').click(function(e){
+     e.preventDefault()
+     
+        let pro = <%= @products.to_json.html_safe %> 
+        
+        let filtered = pro.filter(element => element.category_id == 1)
+     console.log(filtered)
+    
+    //call the container card-columns
+    $('.card-columns').empty()
+    
+    filtered.forEach(product => {
+        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title">${product.name}</p>
+                                <div>
+                                 
+                                </div>
+                        </div>
+                </div>`
+        $('.card-columns').append(html)
+    })
+    
+ })
 
-    <%= link_to product.name, product_path(product) %>
+$('#dairy_products').click(function(e){
+     e.preventDefault()
+     
+        let pro = <%= @products.to_json.html_safe %> 
+        
+        let filtered = pro.filter(element => element.category_id == 2)
+     console.log(filtered)
+    
+    //call the container card-columns
+    $('.card-columns').empty()
+    
+    filtered.forEach(product => {
+        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title">${product.name}</p>
+                                <div>
+                                 
+                                </div>
+                        </div>
+                </div>`
+        $('.card-columns').append(html)
+    })
+    
+ })
 
-    </li>
+$('#seed').click(function(e){
+     e.preventDefault()
+     
+        let pro = <%= @products.to_json.html_safe %> 
+        
+        let filtered = pro.filter(element => element.category_id == 3)
+     console.log(filtered)
+    
+    //call the container card-columns
+    $('.card-columns').empty()
+    
+    filtered.forEach(product => {
+        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title">${product.name}</p>
+                                <div>
+                                 
+                                </div>
+                        </div>
+                </div>`
+        $('.card-columns').append(html)
+    })
+    
+ })
+
+</script>
 
     
-    
-<%end%>
-<%= link_to 'new', new_product_path %>
