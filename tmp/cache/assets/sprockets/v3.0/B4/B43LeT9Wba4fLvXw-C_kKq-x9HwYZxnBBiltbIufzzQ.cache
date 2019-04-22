@@ -1,6 +1,0 @@
-[o:Set:
-<<<<<<< HEAD
-@hash}I"environment-version:ETTI"environment-paths;TTI"rails-env;TTI">processors:type=text/css&file_type=text/css&pipeline=self;TTI"9file-digest://app/assets/stylesheets/application.css;TTI")file-digest://app/assets/stylesheets;TTI"9file-digest://app/assets/stylesheets/categories.scss;TTI"7file-digest://app/assets/stylesheets/products.scss;TTF
-=======
-@hash}I"environment-version:ETTI"environment-paths;TTI"rails-env;TTI">processors:type=text/css&file_type=text/css&pipeline=self;TTI"9file-digest://app/assets/stylesheets/application.css;TTI")file-digest://app/assets/stylesheets;TTI"4file-digest://app/assets/stylesheets/pages.scss;TTF
->>>>>>> 2f2e36e7877d4a0c79b00b3f6b7b054b26d568ab
