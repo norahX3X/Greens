@@ -39,6 +39,9 @@
             <li class="nav-item active">
                 <%= link_to  "Sign in", new_user_session_path,  class: "nav-link" %>
             </li>
+            <li class="nav-item active">
+                <%= link_to  "Products", products_path,  class: "nav-link" %>
+            </li>
             <% end %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -56,6 +59,9 @@
       </nav>
       <!-- end of nav bar -->
     <%= render  "layouts/alerts" %>
-    <%= yield %>
+    <div class="container">
+        <%= yield %>
+    </div>
+    
   </body>
 </html>
