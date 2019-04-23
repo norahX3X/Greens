@@ -32,8 +32,11 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: 'form-control'%>
   </div>
-
-    <%= f.hidden_field :cart_id,  value: Cart.create(total_items: 0 ).id %>
+<%= user_cart = Cart.new 
+user_cart.total_items = 0
+user_cart.save
+p "ID is  #{user_cart.id}"  %>
+    <%= f.hidden_field :cart_id,  value: user_cart.id   %>
 
 
   <div class="actions">
