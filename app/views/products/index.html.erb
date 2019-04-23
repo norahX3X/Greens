@@ -1,14 +1,16 @@
-
-
 <div class="container">
-        <div class="card-columns">
+<h1>Products</h1> <br>
+        <div class="card-columns row " >
             <% @products.each do |product| %>
-                <div class="card " style="width: 19rem;height: 25rem;"">
-                    <img class="rounded-circle" src="<%= product.image %>" alt="" height="300" width="300">
+                <div class="card col-md-3 col-sm-1 mt-3 "  >
+                    <img  class ="card-img-top" src="<%= product.image %>" alt="" height="200" width="100%">
                         <div class="card-body">
                             <p class="card-title"><%= product.name %></p>
-                                <div>
-                                 <%= link_to "More info", product_path(product) %>
+                                <div class="info">
+                                <button class="button">  <%= link_to "More info", product_path(product) , class:"link"%></button> 
+
+                                
+
                                 </div>
                         </div>
                 </div>
@@ -16,33 +18,38 @@
         </div>
     </div>
 
+
+  
+
 <div class="sidenav">
-  <a class="top" href="#Fruits" id="friuts" data-id="79">Fruits</a>
+  <% @categories.each do |cat, index| %>
+    <a class="top" href="#" id="<%= cat.name %>" data-id="<%= cat.id %>"><%= cat.name.capitalize %></a>
+  <% end %>
+  <!--./ <a class="top" href="#Fruits" id="friuts" data-id="79">Fruits</a>
   <a href="#Vegetables"id="vegetables" data-id="80">Vegetables</a>
   <a href="#Dairy_Products"id="dairy_products" data-id="81">Dairy Products</a>
-  <a class="buttom" id="seed" data-id="82" href="#seed">Seed</a>
+  <a class="buttom" id="seed" data-id="82" href="#seed">Seed</a> -->
 </div>
 
 <script>
- $('#friuts').click(function(e){
+ $('.sidenav').on('click','.top',function(e){
      e.preventDefault()
-     
-        let pro = <%= @products.to_json.html_safe %> 
-        
-        let filtered = pro.filter(element => element.category_id == 79)
-     console.log(filtered)
+
+        let pro = <%= @products.to_json.html_safe %>       
+        let filtered = pro.filter(element => element.category_id == $(this).data("id"))
     
     //call the container card-columns
     $('.card-columns').empty()
     
     filtered.forEach(product => {
-        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
-                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+        let html = `<div class="card " style="width: 13rem;height: 23rem;"">
+                    <img class ="image" src="${product.image}" alt="" height="200" width="206">
                         <div class="card-body">
                             <p class="card-title">${product.name}</p>
                                 <div>
-                                 
+                                
                                 </div>
+                                
                         </div>
                 </div>`
         $('.card-columns').append(html)
@@ -50,7 +57,7 @@
     
  })
 
-
+/*
 $('#vegetables').click(function(e){
      e.preventDefault()
      
@@ -63,8 +70,8 @@ $('#vegetables').click(function(e){
     $('.card-columns').empty()
     
     filtered.forEach(product => {
-        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
-                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+        let html = `<div class="card " style="width: 13rem;height: 23rem;"">
+                    <img class ="image" src="${product.image}" alt="" height="200" width="206">
                         <div class="card-body">
                             <p class="card-title">${product.name}</p>
                                 <div>
@@ -89,8 +96,8 @@ $('#dairy_products').click(function(e){
     $('.card-columns').empty()
     
     filtered.forEach(product => {
-        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
-                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+        let html = `<div class="card " style="width: 13rem;height: 23rem;"">
+                    <img class ="image" src="${product.image}" alt="" height="200" width="206">
                         <div class="card-body">
                             <p class="card-title">${product.name}</p>
                                 <div>
@@ -115,8 +122,8 @@ $('#seed').click(function(e){
     $('.card-columns').empty()
     
     filtered.forEach(product => {
-        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
-                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+        let html = `<div class="card " style="width: 13rem;height: 23rem;"">
+                    <img class ="image" src="${product.image}" alt="" height="200" width="206">
                         <div class="card-body">
                             <p class="card-title">${product.name}</p>
                                 <div>
@@ -128,7 +135,7 @@ $('#seed').click(function(e){
     })
     
  })
-
+*/
 </script>
 
     

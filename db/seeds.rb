@@ -13,6 +13,7 @@ Category.destroy_all
 
 fruite = Category.create(name: 'fruite')
 
+
 apple = Product.create(name: 'apple', image: 'https://banner2.kisspng.com/20171219/9ca/apple-png-5a38db4c51f685.1538687515136755963357.jpg', quantity: "10", category_id: fruite.id, stack: 10, price: 20.9 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 orange = Product.create(name: 'orange', image: 'https://www.rd.com/wp-content/uploads/2017/12/01_oranges_Finally%E2%80%94Here%E2%80%99s-Which-%E2%80%9COrange%E2%80%9D-Came-First-the-Color-or-the-Fruit_691064353_Lucky-Business-1024x683.jpg', quantity: 7, category_id: fruite.id, stack: 5, price: 10.9 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 banana = Product.create(name: 'banana', image: 'https://www.organicfacts.net/wp-content/uploads/banana.jpg', quantity: 7, category_id: fruite.id, stack: 3, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
@@ -20,10 +21,11 @@ banana = Product.create(name: 'banana', image: 'https://www.organicfacts.net/wp-
 
 
 
-vigi = Category.create(name: 'vigi')
-carrot = Product.create(name: 'carrot', image: 'https://www.organicfacts.net/wp-content/uploads/storecarrots.jpg', quantity: 6, category_id: vigi.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
+Vegetables = Category.create(name: 'Vegetables')
+
+carrot = Product.create(name: 'carrot', image: 'https://www.organicfacts.net/wp-content/uploads/storecarrots.jpg', quantity: 6, category_id: Vegetables.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 lettuce = Product.create(name: 'lettuce', image: 'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwMy8wMDkvb3JpZ2luYWwvcm9tYWluZS1sZXR0dWNlLU5PLVJFVVNFLmpwZw==', quantity: 4, category_id: vigi.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
-tomato = Product.create(name: 'tomato', image: 'https://cdn-images-1.medium.com/max/1600/1*utOmkc67LDksWHdUZhrMrw.jpeg', quantity: 4, category_id: vigi.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
+tomato = Product.create(name: 'tomato', image: 'https://cdn-images-1.medium.com/max/1600/1*utOmkc67LDksWHdUZhrMrw.jpeg', quantity: 4, category_id: Vegetables.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 
 
 dairyـproduct = Category.create(name: 'dairyـproduct')
