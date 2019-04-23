@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about'
   get '/profile' => 'pages#profile'
+  get '/admin' => 'pages#admin'
 end
