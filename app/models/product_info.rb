@@ -1,2 +1,0 @@
-class ProductInfo < ApplicationRecord
-end
