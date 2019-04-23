@@ -1,15 +1,134 @@
-<h1> Products </h1>
-<% @products.each do |product| %>
 
 
-    <li>
-        <img src="<%=product.image%>" alt="">
+<div class="container">
+        <div class="card-columns">
+            <% @products.each do |product| %>
+                <div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="<%= product.image %>" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title"><%= product.name %></p>
+                                <div>
+                                 <%= link_to "More info", product_path(product) %>
+                                </div>
+                        </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
 
-    <%= link_to product.name, product_path(product) %>
+<div class="sidenav">
+  <a class="top" href="#Fruits" id="friuts" data-id="79">Fruits</a>
+  <a href="#Vegetables"id="vegetables" data-id="80">Vegetables</a>
+  <a href="#Dairy_Products"id="dairy_products" data-id="81">Dairy Products</a>
+  <a class="buttom" id="seed" data-id="82" href="#seed">Seed</a>
+</div>
 
-    </li>
+<script>
+ $('#friuts').click(function(e){
+     e.preventDefault()
+     
+        let pro = <%= @products.to_json.html_safe %> 
+        
+        let filtered = pro.filter(element => element.category_id == 79)
+     console.log(filtered)
+    
+    //call the container card-columns
+    $('.card-columns').empty()
+    
+    filtered.forEach(product => {
+        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title">${product.name}</p>
+                                <div>
+                                 
+                                </div>
+                        </div>
+                </div>`
+        $('.card-columns').append(html)
+    })
+    
+ })
+
+
+$('#vegetables').click(function(e){
+     e.preventDefault()
+     
+        let pro = <%= @products.to_json.html_safe %> 
+        
+        let filtered = pro.filter(element => element.category_id == 80)
+     console.log(filtered)
+    
+    //call the container card-columns
+    $('.card-columns').empty()
+    
+    filtered.forEach(product => {
+        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title">${product.name}</p>
+                                <div>
+                                 
+                                </div>
+                        </div>
+                </div>`
+        $('.card-columns').append(html)
+    })
+    
+ })
+
+$('#dairy_products').click(function(e){
+     e.preventDefault()
+     
+        let pro = <%= @products.to_json.html_safe %> 
+        
+        let filtered = pro.filter(element => element.category_id == 81)
+     console.log(filtered)
+    
+    //call the container card-columns
+    $('.card-columns').empty()
+    
+    filtered.forEach(product => {
+        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title">${product.name}</p>
+                                <div>
+                                 
+                                </div>
+                        </div>
+                </div>`
+        $('.card-columns').append(html)
+    })
+    
+ })
+
+$('#seed').click(function(e){
+     e.preventDefault()
+     
+        let pro = <%= @products.to_json.html_safe %> 
+        
+        let filtered = pro.filter(element => element.category_id == 82)
+     console.log(filtered)
+    
+    //call the container card-columns
+    $('.card-columns').empty()
+    
+    filtered.forEach(product => {
+        let html = `<div class="card " style="width: 19rem;height: 25rem;"">
+                    <img class="rounded-circle" src="${product.image}" alt="" height="300" width="300">
+                        <div class="card-body">
+                            <p class="card-title">${product.name}</p>
+                                <div>
+                                 
+                                </div>
+                        </div>
+                </div>`
+        $('.card-columns').append(html)
+    })
+    
+ })
+
+</script>
 
     
-    
-<%end%>
-<%= link_to 'new', new_product_path %>
