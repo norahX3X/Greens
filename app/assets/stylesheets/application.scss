@@ -12,9 +12,20 @@
 
 .rounded-circle{
 padding: 10px;
+
+
 }
 
-
+.info{
+    text-align: center ;
+    
+}
+.card-title{
+    text-align: center ;
+    color: gray ;
+    font-size: 22px;
+    
+}
 .sidenav {
     width: 150px;
     position: fixed;
@@ -24,8 +35,10 @@ padding: 10px;
     background: rgb(200, 241, 213);
     overflow-x: hidden;
     padding: 8px 0;
+
     
   }
+ 
   .buttom {
       margin-bottom: 30px;
   }
@@ -50,3 +63,6 @@ padding: 10px;
   .card  {
       border-color: rgb(200, 241, 213);
   }
+
+
+  
