@@ -12637,3 +12637,991 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 55ms (Views: 50.8ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2019-04-23 10:53:13 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 60ms (Views: 57.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profile" for ::1 at 2019-04-23 10:53:15 +0300
+Processing by PagesController#profile as HTML
+  Rendering pages/profile.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/profile.html.erb:6
+  Rendered pages/profile.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 71ms (Views: 68.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/about" for ::1 at 2019-04-23 11:00:09 +0300
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 85ms (Views: 74.8ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/products" for ::1 at 2019-04-23 11:00:23 +0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.8ms)
+Completed 200 OK in 87ms (Views: 81.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-23 11:00:38 +0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (41.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:7
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:10
+  Rendered products/show.html.erb within layouts/application (48.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 130ms (Views: 75.2ms | ActiveRecord: 49.4ms)
+
+
+Started GET "/products/1" for ::1 at 2019-04-23 11:06:41 +0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:7
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/show.html.erb:10
+  Rendered products/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (1.5ms)
+Completed 200 OK in 64ms (Views: 59.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:06:43 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 56ms (Views: 53.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:07:12 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 84ms (Views: 81.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cart" for ::1 at 2019-04-23 11:08:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/cart"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/carts" for ::1 at 2019-04-23 11:08:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/carts"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/carts/index" for ::1 at 2019-04-23 11:08:48 +0300
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 52ms (Views: 48.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cart" for ::1 at 2019-04-23 11:09:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/cart"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-04-23 11:09:48 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/carts/index" for ::1 at 2019-04-23 11:10:36 +0300
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:12:02 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 96ms (Views: 94.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/carts/index" for ::1 at 2019-04-23 11:12:03 +0300
+Processing by CartsController#index as HTML
+  Rendering carts/index.html.erb within layouts/application
+  Rendered carts/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 55ms (Views: 41.5ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:12:43 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:12:49 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-04-23 11:13:54 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eUwrh85Ik5whKpIde+D4AEnJnkSyrHHmL1e/zPhN7hydelu3eqWZWGyIPb36SURRoRmebOSPsFQnBcpqzShy0A=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:13:54 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_alerts.html.erb (0.7ms)
+Completed 200 OK in 67ms (Views: 61.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:13:55 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:14:10 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:14:34 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 93ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:14:39 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:14:45 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (5.4ms)
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 62ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:15:26 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `First_Name' for #<User:0x00007f8a3ad2fd40>
+Did you mean?  first_name?
+               first_name=):
+     7: 
+     8:   <div class="field">
+     9:       <%= f.label :First_Name %><br />
+    10:       <%= f.email_field :First_Name, autofocus: true , class: 'form-control'%>
+    11:     </div>
+    12: 
+    13:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:10:in `block in _app_views_devise_registrations_new_html_erb___2263779122203950575_70115834555720'
+app/views/devise/registrations/new.html.erb:5:in `_app_views_devise_registrations_new_html_erb___2263779122203950575_70115834555720'
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:15:31 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (47.4ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `First_Name' for #<User:0x00007f8a3ff8c660>
+Did you mean?  first_name?
+               first_name=):
+     7: 
+     8:   <div class="field">
+     9:       <%= f.label :First_Name %><br />
+    10:       <%= f.email_field :First_Name, autofocus: true , class: 'form-control'%>
+    11:     </div>
+    12: 
+    13:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:10:in `block in _app_views_devise_registrations_new_html_erb___2263779122203950575_70115879596820'
+app/views/devise/registrations/new.html.erb:5:in `_app_views_devise_registrations_new_html_erb___2263779122203950575_70115879596820'
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:18:10 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `First_Name' for #<User:0x00007f8a3b651090>
+Did you mean?  first_name?
+               first_name=):
+     7: 
+     8:   <div class="field">
+     9:       <%= f.label :First_Name %><br />
+    10:       <%= f.email_field :First_Name, autofocus: true , class: 'form-control'%>
+    11:     </div>
+    12: 
+    13:   <div class="field">
+  
+app/views/devise/registrations/new.html.erb:10:in `block in _app_views_devise_registrations_new_html_erb___2263779122203950575_70115839367420'
+app/views/devise/registrations/new.html.erb:5:in `_app_views_devise_registrations_new_html_erb___2263779122203950575_70115839367420'
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:24:00 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 75ms (Views: 74.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:24:26 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.9ms)
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:25:33 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-04-23 11:25:55 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AkGciwG3nMK+baTbGx1BE7vdRgso4kSX8AEViqNRjC4hEDu594V2VJ/fxfNtk4PwMVkUGPyb7lO7QkQ8+l9eFA==", "user"=>{"first_name"=>"Test", "last_name"=>"User", "email"=>"d@d.d", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :first_name, :last_name
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "d@d.d"], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (13.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "d@d.d"], ["encrypted_password", "$2a$11$VGBGLBrEP71th2iZsVo87uPyyijByxtah5QxzLaCpogSZtEBNI4/W"], ["created_at", "2019-04-23 08:25:55.860147"], ["updated_at", "2019-04-23 08:25:55.860147"]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 213ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:25:55 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:26:48 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 79ms (Views: 76.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:26:49 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 42ms (Views: 40.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:26:49 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profile" for ::1 at 2019-04-23 11:26:54 +0300
+Processing by PagesController#profile as HTML
+  Rendering pages/profile.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/pages/profile.html.erb:6
+  Rendered pages/profile.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 44ms (Views: 40.5ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-04-23 11:27:25 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wLCH9jdJfo5ROGCca1RFSpZpLoHVI88kspvhmu+Rkwbj4SDEwXuUGHCKAbQd2oepHO18kgFaZeD52LAstp9BPA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:27:25 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:27:27 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:31:47 +0300
+  [1m[35m (41.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (51.3ms)
+  Rendered layouts/_alerts.html.erb (0.7ms)
+Completed 200 OK in 674ms (Views: 628.7ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/users" for ::1 at 2019-04-23 11:32:03 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g6cetOlPZW2h7kLAiu52FJVED0nowdMhz4ib58QwxDRuEmnKUYOGoPkCOnKcuzeJO2HMi6AQVMMo2jMyFUwryA==", "user"=>{"first_name"=>"test1", "last_name"=>"test1", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :first_name, :last_name
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$11$C4uHWlm4byUDOTd/aoSZ/u0DFeLc4VwsSloQq1AFHD.1qPzLjNuja"], ["created_at", "2019-04-23 08:32:03.581419"], ["updated_at", "2019-04-23 08:32:03.581419"]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 249ms (ActiveRecord: 43.1ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:32:03 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started DELETE "/users/sign_out" for ::1 at 2019-04-23 11:33:51 +0300
+  
+ActionController::RoutingError (undefined method `before_filter' for ApplicationController:Class
+Did you mean?  before_action):
+  
+app/controllers/application_controller.rb:5:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-04-23 11:33:57 +0300
+  
+ActionController::RoutingError (undefined method `before_filter' for ApplicationController:Class
+Did you mean?  before_action):
+  
+app/controllers/application_controller.rb:5:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2019-04-23 11:34:45 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 95ms (Views: 71.2ms | ActiveRecord: 18.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-04-23 11:34:49 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jGEMuFlmp9wu/rDJk3OIKXZ4CWo4xlPzUOG7dT/vy3Nh1HvG4apEEXYSyHuFJsm02F3KqHAX1BG3sxOg7pMkjw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x00007ffc53253008>):
+  
+app/controllers/application_controller.rb:10:in `configure_permitted_parameters'
+Started GET "/users/" for ::1 at 2019-04-23 11:35:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-04-23 11:35:04 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 60ms (Views: 57.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-04-23 11:35:16 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AkAi/7fd2pSeyuTCFFNZUu5LMmm2zX9SlOfQkobBwj7v9VWBDxE5WcYmnHACBhjPQG7xq/4c+LBztXhHV70twg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 33ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:35:16 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 70ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-04-23 11:35:19 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.5ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-04-23 11:35:39 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PIHICtaIQurzB0kHI0V51GptBRCISazHOoX4426nRW09rLNXgFn128zbFvT6SLb3br4ZgiiwLadFVJFPZHptmw==", "user"=>{"first_name"=>"ebere", "last_name"=>"ebere", "email"=>"ebere@ebere.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x00007ffc532d6430>):
+  
+app/controllers/application_controller.rb:10:in `configure_permitted_parameters'
+Started POST "/users" for ::1 at 2019-04-23 11:36:15 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PIHICtaIQurzB0kHI0V51GptBRCISazHOoX4426nRW09rLNXgFn128zbFvT6SLb3br4ZgiiwLadFVJFPZHptmw==", "user"=>{"first_name"=>"ebere", "last_name"=>"ebere", "email"=>"ebere@ebere.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :password_confirmation
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ebere@ebere.com"], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ebere@ebere.com"], ["encrypted_password", "$2a$11$gKoZIZ9jUTVyCSRdS1FGj.ayWnMbyyzWU/wLvFL4pxJ1p3f.MI.BS"], ["created_at", "2019-04-23 08:36:15.941785"], ["updated_at", "2019-04-23 08:36:15.941785"], ["first_name", "ebere"], ["last_name", "ebere"]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 235ms (ActiveRecord: 18.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 11:36:15 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profile" for ::1 at 2019-04-23 11:37:23 +0300
+Processing by PagesController#profile as HTML
+  Rendering pages/profile.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/profile.html.erb:6
+  Rendered pages/profile.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 77ms (Views: 73.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 11:37:27 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_alerts.html.erb (0.7ms)
+Completed 200 OK in 63ms (Views: 60.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:03:32 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 10.3ms)
+
+
+  
+NoMethodError (undefined method `for' for #<Devise::ParameterSanitizer:0x00007ffc530da398>):
+  
+app/controllers/application_controller.rb:11:in `configure_permitted_parameters'
+Started GET "/users/edit" for ::1 at 2019-04-23 12:03:51 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 132ms (Views: 107.6ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:05:51 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.8ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 69ms (Views: 66.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:07:46 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 63ms (Views: 49.0ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:07:56 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:08:02 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:08:29 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (28.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 91ms (Views: 60.8ms | ActiveRecord: 28.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:08:44 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (2.3ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 66ms (Views: 62.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:09:15 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 99ms (Views: 95.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:09:26 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_alerts.html.erb (0.7ms)
+Completed 200 OK in 67ms (Views: 61.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 12:11:06 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/users" for ::1 at 2019-04-23 12:11:29 +0300
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T/B98ep8m7BW89kBo8hph98T3VwzFgQwV5u2oKQuuV4S7hWw4RJ5PXEqGG+lUtfVsTUQMC3r7jX6RqyYkUDnfQ==", "user"=>{"first_name"=>"ebere", "last_name"=>"GA", "email"=>"ebere@ebere.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :password_confirmation
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 222ms (Views: 44.3ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/users" for ::1 at 2019-04-23 13:11:08 +0300
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X3/3dQhXPXTq+W5nSf9BFN6CYgjeFb8ON0EcNxA0R7ICYZ80Aznf+c0grwlPZf9GsKSvZMDoVQuanAYPJVoZkQ==", "user"=>{"first_name"=>"ebere", "last_name"=>"GA", "email"=>"ebere@ebere.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :password_confirmation
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.0ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 251ms (Views: 65.2ms | ActiveRecord: 1.7ms)
+
+
+Started PUT "/users" for ::1 at 2019-04-23 13:11:21 +0300
+Processing by Devise::RegistrationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1j0uO6LLC5rwJpx8dmDhAE6RLhyxZyqe9OZjpaAybMmLI0Z6qaXpF9f/XRJw+l9SILfjcK+awJtZO3mdlVwy6g==", "user"=>{"first_name"=>"ebere", "last_name"=>"GA", "email"=>"ebere@ebere.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Update"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (18.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :password_confirmation
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.5ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_alerts.html.erb (0.9ms)
+Completed 200 OK in 260ms (Views: 53.1ms | ActiveRecord: 22.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 13:11:24 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-04-23 13:11:27 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GXLMhwh7Sd+g1oRbLFxQ1w4DLC4MkR8BKC/BR7+taq1EbKTGAxWrUocPRTUqxu6FYCXhQhJs9QSF8tt/isM0jg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 49ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 13:11:27 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-23 13:11:29 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.1ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-04-23 13:11:35 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dwJkPrR9mFcm75IBwbKc39zXOsMZHp0DyxYKX9TyYxesOvWV84IfB5dUdYFMB49OYc5cpy1B237tgnM5vMD2jQ==", "user"=>{"email"=>"a@a.a", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "a@a.a"], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 200ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dwJkPrR9mFcm75IBwbKc39zXOsMZHp0DyxYKX9TyYxesOvWV84IfB5dUdYFMB49OYc5cpy1B237tgnM5vMD2jQ==", "user"=>{"email"=>"a@a.a", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 204ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-04-23 13:11:46 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sgvKGhtC7JN70NfbqbqYKdDnLXwPz5UYDe4FHu+WRVwQmoUwcecki/KYISzNP+gN6silfSr13NKlfldrSAJ9HQ==", "user"=>{"email"=>"a@a.a", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "a@a.a"], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 175ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 13:11:46 +0300
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:32
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/profile" for ::1 at 2019-04-23 13:44:39 +0300
+Processing by PagesController#profile as HTML
+  Rendering pages/profile.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/profile.html.erb:6
+  Rendered pages/profile.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 66ms (Views: 63.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/edit" for ::1 at 2019-04-23 13:44:40 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/abdulaziz/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_alerts.html.erb (0.7ms)
+Completed 200 OK in 72ms (Views: 69.1ms | ActiveRecord: 0.5ms)
+
+

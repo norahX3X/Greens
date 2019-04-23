@@ -30,6 +30,9 @@
                 <%= link_to  "Home", root_path, class: "nav-link" %>
             </li> -->
             <% if current_user %>
+            <li class="nav-item active">
+                <%= link_to  "Cart", carts_index_path,  class: "nav-link" %>
+            </li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello <%= current_user.first_name %></a>
@@ -46,9 +49,6 @@
             <li class="nav-item active">
                 <%= link_to  "Sign in", new_user_session_path,  class: "nav-link" %>
             </li>
-            <li class="nav-item active">
-                <%= link_to  "Products", products_path,  class: "nav-link" %>
-            </li>
             <% end %>
           </ul>
 
@@ -61,10 +61,10 @@
 
     <%= render  "layouts/alerts" %>
 
-<br><br><br><br><br>
+
     <footer class="footer bg-success">
         <div class="container">
-          <span class="text-white text-center">All rights reserved to Misk</span>
+          <span class="text-white text-center">All rights reserved to Undefined!</span>
         </div>
       </footer>
     
