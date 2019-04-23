@@ -9,6 +9,7 @@
     <%= f.text_field :quantity %><br>
 
     <%= f.label :category %>
+    
     <%= f.collection_select :category_id, Category.all, :id, :name %><br>
 
     <%= f.submit "Submit" %>
