@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_121728) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+ 
   create_table "carts", force: :cascade do |t|
     t.integer "total_items"
     t.datetime "created_at", null: false
