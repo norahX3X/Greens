@@ -1,8 +1,4 @@
 ./tmp
 tmp
-log/development.log
-Gemfile.lock
-Gemfile
-Gemfile
-Gemfile.lock
-Gemfile
+log
+./log
