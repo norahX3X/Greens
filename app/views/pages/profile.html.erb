@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="card mt-5">
+            <div class="card-body">
+            <h5 class="card-title">Personal Information</h5>
+
+        first name: <%= current_user.first_name %> <br>
+        last name: <%= current_user.last_name %> <br>
+        Email: <%= current_user.email %> <br>
+        Password: ****** <br>
+        Joining date: <%= current_user.created_at %> <br>
+        <%= link_to  "Edit", edit_user_registration_path %>
+            </div>    
+    </div>
+
+<div class="card mt-5">
+    <div class="card-body">
+        <h5 class="card-title">Shipping Info</h5>
+        address: <br>
+        city: <br>
+    </div>
+</div>
+</div>
