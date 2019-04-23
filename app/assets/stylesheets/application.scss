@@ -11,6 +11,48 @@
 //     text-align: left;
 //     align-content: center;
 // }
+
+
+.rounded-circle{
+padding: 10px;
+}
+
+
+.sidenav {
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 250px;
+    right: 10px;
+    background: rgb(200, 241, 213);
+    overflow-x: hidden;
+    padding: 8px 0;
+    
+  }
+  .buttom {
+      margin-bottom: 30px;
+  }
+  .top {
+      margin-top: 27px;
+  }
+  .card-columns {
+     font-size: 17px;
+  }
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #032d14;
+  }
+
+  .card  {
+      border-color: rgb(200, 241, 213);
+  }
 .product_info * {
 
     // justify-content: center;
