@@ -7,7 +7,7 @@
                         <div class="card-body">
                             <p class="card-title"><%= product.name %></p>
                                 <div class="info">
-                                <button class="button">  <%= link_to "More info", product_path(product) , class:"link"%></button> 
+                                  <%= link_to "More info", product_path(product) , class:"btn btn-success px-5"%>
 
                                 
 
@@ -42,13 +42,13 @@
     $('.card-columns').empty()
     
     filtered.forEach(product => {
-        let html = `<div class="card " style="width: 13rem;height: 23rem;"">
-                    <img class ="image" src="${product.image}" alt="" height="200" width="206">
+        let html = `<div class="card col-md-3 col-sm-1 mt-3">
+                    <img class ="card-img-top" src="${product.image}" alt="" height="200" width="206">
                         <div class="card-body">
                             <p class="card-title">${product.name}</p>
-                                <div>
-                                
-                                </div>
+                                <a class = 'btn btn-success px-5' href = "/products/${product.id}">
+                                    fffffffff
+                                </a>
                                 
                         </div>
                 </div>`
