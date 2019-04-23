@@ -1,10 +1,5 @@
 class CartsController < ApplicationController
   def index
-<<<<<<< HEAD
-    @carts=Cart.all
-=======
-
->>>>>>> d68fe6b4b46d7b7f9caa05393abcc223032347e1
   end
 
   def new

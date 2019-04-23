@@ -24,6 +24,16 @@ class ProductsController < ApplicationController
 
   def addCart
     p "added"
+    user_id = current_user.id
+
+    current_product = Product.find(params[:id])
+    p current_product.id
+    cartItem = CartItem.new
+    cartItem.amount = 9
+    cartItem.save
+    # current_cart = current_user.cart
+    # current_cart.add_item(params[:product_id])
+
       # item = items.where('product_id = ?', product_id).first
       # if item
       #   # increase the quantity of product in cart
@@ -35,8 +45,7 @@ class ProductsController < ApplicationController
       # end
       # save
     
-    # cartItem = CartItem.new
-    # current_cart.add_item(params[:product_id])
+   
     # redirect to shopping cart or whereever
 
     # session[:product_id] = params[:product_id]
@@ -50,10 +59,9 @@ class ProductsController < ApplicationController
     # end
     # @count = OrderTemp.count
     # render json: @count
-    # current_product=Product.find(params[:id])
     
     # redirect_to product_path(current_product)
-    redirect_to products_path
+    # redirect_to products_path
 
     end
 

@@ -4,13 +4,11 @@ Rails.application.routes.draw do
   resources :products
   devise_for :users
   root to: 'pages#home'
-<<<<<<< HEAD
-  resources :carts
-=======
+  # resources :carts
 
-  post 'products/addCart'
+  # post 'products/addCart'
+  post 'products/:id/addCart/' => 'products#addCart', :as => 'addCart'
 
->>>>>>> d68fe6b4b46d7b7f9caa05393abcc223032347e1
   resources :orders
   # post '/add_to_cart/:product_id' => 'carts#add_to_cart', :as => 'add_to_cart'
   # post 'addCart' => 'product#addCart'
@@ -22,4 +20,5 @@ Rails.application.routes.draw do
 
   get 'about' => 'pages#about'
   get '/profile' => 'pages#profile'
+  get '/admin' => 'pages#admin'
 end
