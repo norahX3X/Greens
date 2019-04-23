@@ -1,0 +1,16 @@
+
+
+<h1> Show category </h1>
+<%= @category.name %><br>
+
+<p> the products is:  <% @category.products.each do |a| %>
+<%= a.name %>
+
+<%end%></p>
+
+
+
+
+<p><%= link_to 'Edit', edit_category_path %> 
+<%= link_to 'Delete', category_path(@category), method: :delete %>
+</p>

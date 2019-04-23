@@ -1,15 +1,88 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Greens</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!--./<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   --> 
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+    <!--/
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+   <!-- cart link  -->
+    <!--  link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.subtotal} )", cart_path, class: "btn btn-link" %> -->
+    <!-- nav bar  -->
+    <nav class="navbar navbar-expand navbar-dark bg-success">
+        <%= link_to  "GREENS", root_path, class:"navbar-brand" %>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+      
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class=" navbar-nav  ml-auto">
+            <!-- <li class="nav-item active">
+                <%= link_to  "Home", root_path, class: "nav-link" %>
+            </li> -->
+            <% if current_user %>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello <%= current_user.first_name %></a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <%= link_to  "My Profile", profile_path, class: "dropdown-item" %>
+                    <%= link_to  "My Orders", orders_path, class: "dropdown-item" %>
+                    <%= link_to  "Sing out", destroy_user_session_path, method: :delete,  class: "dropdown-item" %>
+                </div>
+              </li>
+            <% else %>
+            <li class="nav-item active">
+                <%= link_to  "Sign up", new_user_registration_path,  class: "nav-link" %>
+            
+            <li class="nav-item active">
+                <%= link_to  "Sign in", new_user_session_path,  class: "nav-link" %>
+            </li>
+            <% end %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="#">Fruits</a>
+              </div>
+
+            <li class="nav-item active">
+                <%= link_to  "Products", products_path,  class: "nav-link" %>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+      <!-- end of nav bar -->
+    <div class="">
+        <%= yield %>
+    </div>
+
+    <%= render  "layouts/alerts" %>
+
+<br><br><br><br><br>
+    <footer class="footer bg-success">
+        <div class="container">
+          <span class="text-white text-center">All rights reserved to Misk</span>
+        </div>
+      </footer>
+    
   </body>
 </html>
