@@ -4938,3 +4938,214 @@ Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
 >>>>>>> 2f2e36e7877d4a0c79b00b3f6b7b054b26d568ab
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(942013028333907180)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190421110939)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (55.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190421110939_devise_create_users.rb:5
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190421110939_devise_create_users.rb:39
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190421110939_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190421110939"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddAdminToUser (20190421115814)
+  [1m[35m (40.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT FALSE[0m
+  ↳ db/migrate/20190421115814_add_admin_to_user.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190421115814"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(942013028333907180)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-04-21 16:47:27 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lamyaahamed/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_alerts.html.erb (0.5ms)
+Completed 200 OK in 347ms (Views: 333.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-21 16:47:41 +0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (43.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (69.7ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 127ms (Views: 59.6ms | ActiveRecord: 56.2ms)
+
+
+Started GET "/categories" for ::1 at 2019-04-21 16:52:11 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lamyaahamed/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:2
+  Rendered categories/index.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 282ms (Views: 256.3ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/categories/new" for ::1 at 2019-04-21 16:52:17 +0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (13.5ms)
+  Rendered categories/new.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/categories" for ::1 at 2019-04-21 16:52:26 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iMMGe+JGP3CMFwOvERmEK0WO6JzcHDoVcxXVmA1s3duzXQHaj7WzGze1Sk/mURvtEnQpyX2cbYgcJQNUpNBFvQ==", "category"=>{"name"=>"milk"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "milk"], ["created_at", "2019-04-21 13:52:26.790363"], ["updated_at", "2019-04-21 13:52:26.790363"]]
+  ↳ app/controllers/categories_controller.rb:15
+  [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:15
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 50ms (ActiveRecord: 42.3ms)
+
+
+Started GET "/categories" for ::1 at 2019-04-21 16:52:26 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:2
+  Rendered categories/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_alerts.html.erb (0.7ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for ::1 at 2019-04-21 16:52:34 +0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 37.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/products/new" for ::1 at 2019-04-21 16:52:38 +0300
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/products/_form.html.erb:12
+  Rendered products/_form.html.erb (8.0ms)
+  Rendered products/new.html.erb within layouts/application (10.5ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 35ms (Views: 30.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/products" for ::1 at 2019-04-21 16:53:31 +0300
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0BtU0XJX5MaY3QdFGVyRYfwdfVicVCpRKSfIKbogjo8vtvnS0ngRL8ESWA7urCVmJEicSzLiZK04g603XeXGwQ==", "product"=>{"name"=>"yogurt", "image"=>"https://i5.walmartimages.ca/images/Large/075/015/999999-Main_6820075015.jpg", "quantity"=>"22", "category_id"=>"4"}, "commit"=>"Submit"}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:15
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "image", "quantity", "created_at", "updated_at", "category_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "yogurt"], ["image", "https://i5.walmartimages.ca/images/Large/075/015/999999-Main_6820075015.jpg"], ["quantity", 22], ["created_at", "2019-04-21 13:53:31.328456"], ["updated_at", "2019-04-21 13:53:31.328456"], ["category_id", 4]]
+  ↳ app/controllers/products_controller.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:15
+Redirected to http://localhost:3000/products
+Completed 302 Found in 27ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/products" for ::1 at 2019-04-21 16:53:31 +0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_alerts.html.erb (0.4ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-04-23 09:17:08 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/lamyaahamed/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_alerts.html.erb (0.7ms)
+Completed 200 OK in 373ms (Views: 358.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2019-04-23 10:20:45 +0300
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (45.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (98.1ms)
+  Rendered layouts/_alerts.html.erb (0.7ms)
+Completed 200 OK in 161ms (Views: 70.4ms | ActiveRecord: 79.0ms)
+
+
+Started GET "/categories" for ::1 at 2019-04-23 10:20:59 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:2
+  Rendered categories/index.html.erb within layouts/application (54.6ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 89ms (Views: 65.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/categories/4" for ::1 at 2019-04-23 10:21:07 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:7
+  Rendering categories/show.html.erb within layouts/application
+  [1m[36mProduct Load (41.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category_id" = $1[0m  [["category_id", 4]]
+  ↳ app/views/categories/show.html.erb:6
+  Rendered categories/show.html.erb within layouts/application (70.0ms)
+  Rendered layouts/_alerts.html.erb (0.6ms)
+Completed 200 OK in 147ms (Views: 53.8ms | ActiveRecord: 43.9ms)
+
+
+Started GET "/products/7" for ::1 at 2019-04-23 10:21:21 +0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (3.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:7
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 35ms (Views: 22.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/products/5" for ::1 at 2019-04-23 10:21:26 +0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (4.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:7
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_alerts.html.erb (0.3ms)
+Completed 200 OK in 31ms (Views: 23.6ms | ActiveRecord: 4.3ms)
+
+
