@@ -1,149 +1,64 @@
-<div class="container">
-<h1>Products</h1> <br>
-        <div class="card-columns row " >
-            <% @products.each do |product| %>
-                <div class="card col-md-3 col-sm-1 mt-3 "  >
-                    <img  class ="card-img-top" src="<%= product.image %>" alt="" height="200" width="100%">
-                        <div class="card-body">
-                            <p class="card-title"><%= product.name %></p>
-                                <div class="info">
-                                  <%= link_to "More info", product_path(product) , class:"btn btn-success px-5"%><br>
-                                  <% if current_user && current_user.admin?  %>
-                                  <%= link_to 'Edit', "/products/#{product.id}/edit", class: 'card-link' %> 
-                    <%= link_to 'Delete', product_path(product.id), method: :delete, class: 'card-link' %>
-                    <% end %>
-                    
-
-                                
-                                </div>
-                        </div>
-                </div>
-            <% end %>
-        </div>
-    </div>
-
-
-  
-
-<div class="sidenav">
-  <% @categories.each do |cat, index| %>
-    <a class="top" href="#" id="<%= cat.name %>" data-id="<%= cat.id %>"><%= cat.name.capitalize %></a>
-  <% end %>
-  <!--./ <a class="top" href="#Fruits" id="friuts" data-id="79">Fruits</a>
-  <a href="#Vegetables"id="vegetables" data-id="80">Vegetables</a>
-  <a href="#Dairy_Products"id="dairy_products" data-id="81">Dairy Products</a>
-  <a class="buttom" id="seed" data-id="82" href="#seed">Seed</a> -->
+<div class="container mt-4">
+        <div class="sidenav2 navbar navbar-dark bg-success">
+                <% @categories.each do |cat, index| %>
+                  <a class="top navbar-dark nav-link text-light" href="#" id="<%= cat.name %>" data-id="<%= cat.id %>"><%= cat.name.capitalize %></a>
+                <% end %>
+          
+          
+            </div>
+          
+            <div class="card-columns row " >
+                <% @products.each do |product| %>
+                    <div class="card col-md-3 col-sm-12 mt-3 "  >
+                        <img  class ="card-img-top" src="<%= product.image %>" alt="" height="200" width="100%">
+                            <div class="card-body">
+                                <p class="card-title"><%= product.name %></p>
+                                    <div class="info">
+                                      <%= link_to "More info", product_path(product) , class:"btn btn-success px-5"%><br>
+                                      <% if current_user && current_user.admin?  %>
+                                      <%= link_to 'Edit', "/products/#{product.id}/edit", class: 'card-link' %> 
+                        <%= link_to 'Delete', product_path(product.id), method: :delete, class: 'card-link' %>
+                        <% end %>
+                        
+          
+                                    
+                                    </div>
+                            </div>
+                    </div>
+                <% end %>
+            </div>
+          
+          
+          
+          
+            <script>
+                $('.sidenav2').on('click','.top',function(e){
+                    e.preventDefault()
+               
+                       let pro = <%= @products.to_json.html_safe %>       
+                       let filtered = pro.filter(element => element.category_id == $(this).data("id"))
+                   
+                   //call the container card-columns
+                   $('.card-columns').empty()
+                   
+                   filtered.forEach(product => {
+                       let html = `<div class="card col-md-3 col-sm-12 mt-3">
+                                   <img class ="card-img-top" src="${product.image}" alt="" height="200" width="206">
+                                       <div class="card-body">
+                                           <p class="card-title">${product.name}</p>
+                                               <a class = 'btn btn-success px-5' href = "/products/${product.id}">
+                                                     More info
+                                               </a><br>
+                                               <% if current_user && current_user.admin?  %>
+                                            <a class= "card-link" href="/products/${product.id}/edit"> Edit </a>
+                                            <a class= "card-link" href="/products/${product.id}" data-method="delete" rel="nofollow">Delete</a>
+                                           <% end %>
+                               
+                                       </div>
+                               </div>`
+                       $('.card-columns').append(html)
+                   })
+                   
+                })
+           </script>
 </div>
-
-<script>
- $('.sidenav').on('click','.top',function(e){
-     e.preventDefault()
-
-        let pro = <%= @products.to_json.html_safe %>       
-        let filtered = pro.filter(element => element.category_id == $(this).data("id"))
-    
-    //call the container card-columns
-    $('.card-columns').empty()
-    
-    filtered.forEach(product => {
-        let html = `<div class="card col-md-3 col-sm-1 mt-3">
-                    <img class ="card-img-top" src="${product.image}" alt="" height="200" width="206">
-                        <div class="card-body">
-                            <p class="card-title">${product.name}</p>
-                                <a class = 'btn btn-success px-5' href = "/products/${product.id}">
-                                      More info
-                                </a><br>
-                                <% if current_user && current_user.admin?  %>
-                             <a class= "card-link" href="/products/${product.id}/edit"> Edit </a>
-                             <a class= "card-link" href="/products/${product.id}" data-method="delete" rel="nofollow">Delete</a>
-                            <% end %>
-                
-                        </div>
-                </div>`
-        $('.card-columns').append(html)
-    })
-    
- })
-
-/*
-$('#vegetables').click(function(e){
-     e.preventDefault()
-     
-        let pro = <%= @products.to_json.html_safe %> 
-        
-        let filtered = pro.filter(element => element.category_id == 80)
-     console.log(filtered)
-    
-    //call the container card-columns
-    $('.card-columns').empty()
-    
-    filtered.forEach(product => {
-        let html = `<div class="card " style="width: 13rem;height: 23rem;"">
-                    <img class ="image" src="${product.image}" alt="" height="200" width="206">
-                        <div class="card-body">
-                            <p class="card-title">${product.name}</p>
-                                <div>
-                                 
-                                </div>
-                        </div>
-                </div>`
-        $('.card-columns').append(html)
-    })
-    
- })
-
-$('#dairy_products').click(function(e){
-     e.preventDefault()
-     
-        let pro = <%= @products.to_json.html_safe %> 
-        
-        let filtered = pro.filter(element => element.category_id == 81)
-     console.log(filtered)
-    
-    //call the container card-columns
-    $('.card-columns').empty()
-    
-    filtered.forEach(product => {
-        let html = `<div class="card " style="width: 13rem;height: 23rem;"">
-                    <img class ="image" src="${product.image}" alt="" height="200" width="206">
-                        <div class="card-body">
-                            <p class="card-title">${product.name}</p>
-                                <div>
-                                 
-                                </div>
-                        </div>
-                </div>`
-        $('.card-columns').append(html)
-    })
-    
- })
-
-$('#seed').click(function(e){
-     e.preventDefault()
-     
-        let pro = <%= @products.to_json.html_safe %> 
-        
-        let filtered = pro.filter(element => element.category_id == 82)
-     console.log(filtered)
-    
-    //call the container card-columns
-    $('.card-columns').empty()
-    
-    filtered.forEach(product => {
-        let html = `<div class="card " style="width: 13rem;height: 23rem;"">
-                    <img class ="image" src="${product.image}" alt="" height="200" width="206">
-                        <div class="card-body">
-                            <p class="card-title">${product.name}</p>
-                                <div>
-                                 
-                                </div>
-                        </div>
-                </div>`
-        $('.card-columns').append(html)
-    })
-    
- })
-*/
-</script>
-
-    

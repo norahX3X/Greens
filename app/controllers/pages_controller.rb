@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   def about
   end
   def profile
+    @shipping_infos= ShippingInfo.all
   end
   def admin
     @categories = Category.all

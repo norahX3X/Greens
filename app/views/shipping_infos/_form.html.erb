@@ -1,0 +1,27 @@
+
+
+    <div class="card">
+        <div class="card-body">
+<%= form_for @shipping_info do |f| %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %> 
+
+    <%= f.label :Addres %>
+    <%= f.text_field :adress, class: 'form-control' %><br>
+
+    <%= f.label :zip %>
+    <%= f.text_field :zip, class: 'form-control' %><br>
+
+    <%= f.label :City %>
+    <%= f.text_field :city, class: 'form-control' %><br>
+
+    <%= f.label :Phone_Number %>
+    <%= f.number_field :phone_num, class: 'form-control' %><br>
+
+
+    <%= f.submit "Submit", class: 'btn btn-success' %>
+
+<% end %>
+</div>
+</div>
+
