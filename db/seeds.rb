@@ -9,6 +9,7 @@
 
 Product.destroy_all
 Category.destroy_all
+CartItem.destroy_all
 
 
 fruite = Category.create(name: 'fruite')
@@ -21,11 +22,11 @@ banana = Product.create(name: 'banana', image: 'https://www.organicfacts.net/wp-
 
 
 
-Vegetables = Category.create(name: 'Vegetables')
+vegetables = Category.create(name: 'Vegetables')
 
-carrot = Product.create(name: 'carrot', image: 'https://www.organicfacts.net/wp-content/uploads/storecarrots.jpg', quantity: 6, category_id: Vegetables.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
-lettuce = Product.create(name: 'lettuce', image: 'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwMy8wMDkvb3JpZ2luYWwvcm9tYWluZS1sZXR0dWNlLU5PLVJFVVNFLmpwZw==', quantity: 4, category_id: vigi.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
-tomato = Product.create(name: 'tomato', image: 'https://cdn-images-1.medium.com/max/1600/1*utOmkc67LDksWHdUZhrMrw.jpeg', quantity: 4, category_id: Vegetables.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
+carrot = Product.create(name: 'carrot', image: 'https://www.organicfacts.net/wp-content/uploads/storecarrots.jpg', quantity: 6, category_id: vegetables.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
+lettuce = Product.create(name: 'lettuce', image: 'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwMy8wMDkvb3JpZ2luYWwvcm9tYWluZS1sZXR0dWNlLU5PLVJFVVNFLmpwZw==', quantity: 4, category_id: vegetables.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
+tomato = Product.create(name: 'tomato', image: 'https://cdn-images-1.medium.com/max/1600/1*utOmkc67LDksWHdUZhrMrw.jpeg', quantity: 4, category_id: vegetables.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 
 
 dairyـproduct = Category.create(name: 'dairyـproduct')
@@ -36,11 +37,11 @@ laban = Product.create(name: 'laban', image: 'https://i1.wp.com/www.akitcheninis
 
 seed = Category.create(name: 'seed')
 Wheat = Product.create(name: 'Wheat', image: 'https://1.bp.blogspot.com/-swVY1zLmOtY/W20Xynh07iI/AAAAAAAAEns/0a4Kv8XSE3E-Jd4P2e1C8s-VJJXkEFfuQCLcBGAs/s1600/%25D8%25AA%25D9%2581%25D8%25B3%25D9%258A%25D8%25B1%2B%25D8%25AD%25D9%2584%25D9%2585%2B%25D8%25B1%25D8%25A4%25D9%258A%25D8%25A9%2B%25D8%25B3%25D9%2586%25D8%25A7%25D8%25A8%25D9%2584%2B%25D9%2588%25D8%25AD%25D8%25A8%25D9%2588%25D8%25A8%2B%25D8%25A7%25D9%2584%25D9%2582%25D9%2585%25D8%25AD%2B%25D9%2581%25D9%2589%2B%25D8%25A7%25D9%2584%25D9%2585%25D9%2586%25D8%25A7%25D9%2585%2B%25D9%2584%25D8%25A7%25D8%25A8%25D9%2586%2B%25D8%25B3%25D9%258A%25D8%25B1%25D9%258A%25D9%2586.jpg', quantity: 4, category_id: seed.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
-Oats = Product.create(name: 'Oats', image: 'https://i.fatafeat.com/storage/attachments/21/27_nov_art2_196203_large.png', quantity: 4, category_id: seed.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
+oats = Product.create(name: 'Oats', image: 'https://i.fatafeat.com/storage/attachments/21/27_nov_art2_196203_large.png', quantity: 4, category_id: seed.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 
 
 shipping_add = ShippingInfo.create(user_id: 1, zip: 11543, adress:" najah al izz - Al Olaya " ,city: "Riyadh", phone_num: "0550585468" )
 
 order =Order.create(user_id: 1, total: 23 , quantity: 4 , shipping_id: shipping_add.id )
-OrderDetail.create(order_id: order.id , product_id: vigi.id , price:12.5 , amount: 1 )
+OrderDetail.create(order_id: order.id , product_id: oats.id , price:12.5 , amount: 1 )
 OrderDetail.create(order_id: order.id , product_id: apple.id, price:0.5 , amount: 1 )

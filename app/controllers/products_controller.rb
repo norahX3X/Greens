@@ -29,20 +29,20 @@ class ProductsController < ApplicationController
     # get user id and roduct id 
     user_id = current_user.id
     current_product = Product.find(params[:id])
-
-    p current_product.id
-
-
+    # creat new care item
     @cart_item = CartItem.create(cart_item_params) 
-    p @cart_item
-
-    
+    #get user cart
+    current_cart  = Cart.where(user_id: user_id).first
+    #check if exist
+    if current_cart
+      current_cart.items << @cart_item.id
+    else 
+      current_cart= Cart.create(total_items: 1,user_id: user_id)
+      current_cart.items << @cart_item.id
+    end
+    current_cart.save
     redirect_to products_path if @cart_item.save
     
-    current_cart  = Cart.all(:user_id => user_id)
-
-    
-
     # current_cart.add_item(params[:product_id])
 
       # item = items.where('product_id = ?', product_id).first

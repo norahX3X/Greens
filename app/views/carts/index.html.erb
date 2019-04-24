@@ -1,4 +1,13 @@
 <h1>Carts#index</h1>
-<p>Find me in app/views/carts/index.html.erb</p>
-</pre>
-<pre>
+
+   <% @current_cart_items.each do |item| %>
+<% 
+    # item.product_id
+    current_item =  CartItem.where(id: item).first
+    product = Product.where(id: current_item.product_id).first 
+%>
+<h4> product :  <%= current_item.product_id %><br> </h4>
+<h4> amount :<%= current_item.amount %><br> </h4>
+<h4> price: <%= product.price %><br> </h4>
+ <% end %>
+          
