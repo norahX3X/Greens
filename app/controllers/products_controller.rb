@@ -36,18 +36,13 @@ class ProductsController < ApplicationController
     @cart_item = CartItem.create(cart_item_params) 
     p @cart_item
 
-        redirect_to products_path if @cart_item.save
+    
+    redirect_to products_path if @cart_item.save
+    
+    current_cart  = Cart.all(:user_id => user_id)
 
-    # redirect_to products_path
-    # @cartItem = CartItem.new
+    
 
-
-    # cartItem = CartItem.new()
-    # cartItem.amount = 9
-    # cartItem.save
-
-
-    # current_cart = current_user.cart
     # current_cart.add_item(params[:product_id])
 
       # item = items.where('product_id = ?', product_id).first
