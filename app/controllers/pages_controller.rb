@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
     @categories = Category.all
+    @products = Product.all
+    @i = 0
   end
   def about
   end
