@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   def index
     @products=Product.all
     @categories = Category.all
+   
 
     # render
   end
@@ -10,6 +11,7 @@ class ProductsController < ApplicationController
     #get product paam
     @product=Product.find(params[:id])
     # get avilability from stack param 
+    @cart_item = CartItem.new
 
     @avilability = "Out Of Stack"
     # change colors too
@@ -50,4 +52,7 @@ class ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(:name, :image, :quantity, :category_id)
     end
+    def cart_item_params
+      params.require(:cart_item).permit(:product_id, :amount, :cart_id)
+   end
 end

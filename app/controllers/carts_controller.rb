@@ -4,12 +4,15 @@ class CartsController < ApplicationController
   end
 
   def new
+    # @cart= Cart.new
+    @cart= Cart.create(0)
+
+
     #  @cart_item = cartItem.new
     # redirect_to products_path
   end
-
   def create
-
+   
     # product = Product.create(product_params)
     # redirect_to products_path
   end
