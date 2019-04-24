@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  # post 'products/addCart'
-  post 'products/:id/addCart/' => 'products#addCart', :as => 'addCart'
 
   resources :orders
   # post '/add_to_cart/:product_id' => 'carts#add_to_cart', :as => 'add_to_cart'
