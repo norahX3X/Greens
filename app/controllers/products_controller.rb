@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
   def addCart
     p "added"
     # get user id and roduct id 
+    # if current_user
     user_id = current_user.id
     current_product = Product.find(params[:id])
     # creat new care item
@@ -42,7 +43,7 @@ class ProductsController < ApplicationController
     end
     current_cart.save
     redirect_to products_path if @cart_item.save
-    
+  # end 
     # current_cart.add_item(params[:product_id])
 
       # item = items.where('product_id = ?', product_id).first
