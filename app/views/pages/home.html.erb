@@ -93,9 +93,9 @@
     
   </div>
   <% end %> -->
-  <div class="sidenav2">
+  <div class="sidenav2 navbar navbar-dark bg-success">
       <% @categories.each do |cat, index| %>
-        <a class="top" href="#" id="<%= cat.name %>" data-id="<%= cat.id %>"><%= cat.name.capitalize %></a>
+        <a class="top navbar-dark nav-link text-light" href="#" id="<%= cat.name %>" data-id="<%= cat.id %>"><%= cat.name.capitalize %></a>
       <% end %>
 
 
