@@ -1,23 +1,16 @@
 class CartsController < ApplicationController
   def index
-  end
 
-  def new
-    #  @cart_item = cartItem.new
-    # redirect_to products_path
-  end
+    user_id = current_user.id
+    @current_cart_items= Cart.where(user_id: user_id).first.items
 
-  def create
-
-    # product = Product.create(product_params)
-    # redirect_to products_path
   end
 
   private 
     def cart_params
-        params.require(:cart).permit(:total_items)
+        params.require(:cart).permit(:total_items, :items , :user_id)
     end
-  #   def cart_item_params
-  #     params.require(:cart_item).permit(:cart_id, :product_id, :amount)
-  # end
+    def cart_item_params
+      params.require(:cart_item).permit(:product_id, :amount, :cart_id)
+   end
 end
