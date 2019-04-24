@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
     p "added"
     # get user id and roduct id 
     user_id = current_user.id
+    p params[:id]
     current_product = Product.find(params[:id])
     # creat new care item
     @cart_item = CartItem.create(cart_item_params) 
@@ -40,7 +41,7 @@ class ProductsController < ApplicationController
       current_cart= Cart.create(total_items: 1,user_id: user_id)
       current_cart.items << @cart_item.id
     end
-    current_cart.save
+    # current_cart.save
     redirect_to products_path if @cart_item.save
     
     # current_cart.add_item(params[:product_id])

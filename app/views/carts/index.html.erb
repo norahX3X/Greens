@@ -1,8 +1,7 @@
 <h1>Carts#index</h1>
 
    <% @current_cart_items.each do |item| %>
-<% 
-    # item.product_id
+<%  # item.product_id
     current_item =  CartItem.where(id: item).first
     product = Product.where(id: current_item.product_id).first 
 %>
