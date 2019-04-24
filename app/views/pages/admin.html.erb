@@ -1,11 +1,47 @@
 <div class="container">
-    <h1>Admin Dashboard</h1>
+    <h1 class="text-center">Admin Dashboard</h1>
 
-                <ul class="list-group">
-                        <li class="list-group-item">All Orders: <%= @orders.length %> <span class="float-right">Edit</span></li>
+    <!-- <ul class="list-group"> -->
+    <h2>Store Summary</h2>
+    <!-- <li class="list-group-item">All Orders: <%= @orders.length %> <span class="float-right">Edit</span></li>
                         <li class="list-group-item">All Categories <%= @categories.length %> <span class="float-right">Edit</span></li>
                         <li class="list-group-item">All Products <%= @products.length %> <span class="float-right">Edit</span> </li>
                         <li class="list-group-item">All Users <%= @users.length %> <span class="float-right">Edit</span> </li>
-                      </ul>
+                      </ul> -->
+    <div class="row">
+        <div class="card col-md-3 text-center">
+            <div class="card-body">
+                <h5>Orders</h5>
+                <%= @orders.length %>
+            </div>
+        </div>
+        <div class="card col-md-3 text-center">
+            <div class="card-body">
+                <h5>Categories</h5> <%= @categories.length %>
+            </div>
+        </div>
+        <div class="card col-md-3 text-center">
+            <div class="card-body">
+                <h5>Products</h5> <%= @products.length %>
+            </div>
+        </div>
+        <div class="card col-md-3 text-center">
+            <div class="card-body">
+                <h5>Users</h5> <%= @users.length %>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>All Admins</h2>
+    <ul>
+    <% @users.each do |user| %>
+    <% if user.admin %>
+        <li>
+        <%= user.first_name %>
+         </li>
+    <% end %>
+    <% end %>
+</ul>
 
 </div>
