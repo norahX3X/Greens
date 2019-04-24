@@ -2,9 +2,9 @@
 
 
    <% @current_cart_items.each do |item| %>
-<% 
-    # item.product_id
+<%  # item.product_id
     current_item =  CartItem.where(id: item).first
+    
     product = Product.where(id: current_item.product_id).first 
 %>
 <h4> product :  <%= current_item.product_id %><br> </h4>

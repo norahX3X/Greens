@@ -51,7 +51,7 @@
         </div>
       </div>
   </div>
-
+<!-- 
   <% @categories.each do |category| %>
   <nav class="navbar navbar-expand navbar-dark bg-success">
 
@@ -92,6 +92,71 @@
   <% end %>
     
   </div>
+  <% end %> -->
+  <div class="sidenav2 navbar navbar-dark bg-success">
+      <% @categories.each do |cat, index| %>
+        <a class="top navbar-dark nav-link text-light" href="#" id="<%= cat.name %>" data-id="<%= cat.id %>"><%= cat.name.capitalize %></a>
+      <% end %>
+
+
+  </div>
+
+  <div class="card-columns row " >
+      <% @products.each do |product| %>
+          <div class="card col-md-3 col-sm-1 mt-3 "  >
+              <img  class ="card-img-top" src="<%= product.image %>" alt="" height="200" width="100%">
+                  <div class="card-body">
+                      <p class="card-title"><%= product.name %></p>
+                          <div class="info">
+                            <%= link_to "More info", product_path(product) , class:"btn btn-success px-5"%><br>
+                            <% if current_user && current_user.admin?  %>
+                            <%= link_to 'Edit', "/products/#{product.id}/edit", class: 'card-link' %> 
+              <%= link_to 'Delete', product_path(product.id), method: :delete, class: 'card-link' %>
+              <% end %>
+              
+
+                          
+                          </div>
+                  </div>
+          </div>
+      <% end %>
+  </div>
+
+
+
+
+  <script>
+      $('.sidenav2').on('click','.top',function(e){
+          e.preventDefault()
+     
+             let pro = <%= @products.to_json.html_safe %>       
+             let filtered = pro.filter(element => element.category_id == $(this).data("id"))
+         
+         //call the container card-columns
+         $('.card-columns').empty()
+         
+         filtered.forEach(product => {
+             let html = `<div class="card col-md-3 col-sm-1 mt-3">
+                         <img class ="card-img-top" src="${product.image}" alt="" height="200" width="206">
+                             <div class="card-body">
+                                 <p class="card-title">${product.name}</p>
+                                     <a class = 'btn btn-success px-5' href = "/products/${product.id}">
+                                           More info
+                                     </a><br>
+                                     <% if current_user && current_user.admin?  %>
+                                  <a class= "card-link" href="/products/${product.id}/edit"> Edit </a>
+                                  <a class= "card-link" href="/products/${product.id}" data-method="delete" rel="nofollow">Delete</a>
+                                 <% end %>
+                     
+                             </div>
+                     </div>`
+             $('.card-columns').append(html)
+         })
+         
+      })
+ </script>
+</div>
+
   <% end %>
 </div>
 
