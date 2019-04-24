@@ -15,7 +15,6 @@
                     
 
                                 
-
                                 </div>
                         </div>
                 </div>
@@ -53,8 +52,12 @@
                             <p class="card-title">${product.name}</p>
                                 <a class = 'btn btn-success px-5' href = "/products/${product.id}">
                                       More info
-                                </a>
-                            <p class= "card-link" "> /products/${product.id}/edit",  </p>
+                                </a><br>
+                                <% if current_user && current_user.admin?  %>
+                             <a class= "card-link" href="/products/${product.id}/edit"> Edit </a>
+                             <a class= "card-link" href="/products/${product.id}" data-method="delete" rel="nofollow">Delete</a>
+                            <% end %>
+                
                         </div>
                 </div>`
         $('.card-columns').append(html)

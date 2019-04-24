@@ -12,6 +12,9 @@
 //     align-content: center;
 // }
 
+* {
+  box-sizing: border-box;
+}
 
 
 
@@ -26,9 +29,9 @@
     font-size: 22px;
     
 }
-.container{
-  padding: 15px;
-}
+// .container{
+//   padding: 15px;
+// }
 .sidenav {
   height: 400px;
     width: 160px;
@@ -113,7 +116,12 @@ html {
   margin-top:15px;
 }
 
-.container{
-  margin-left: 150px;
+// .container{
+//   margin-left: 150px;
   
+// }
+
+
+.row{
+  margin: 0;
 }
