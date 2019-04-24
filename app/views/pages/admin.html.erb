@@ -11,24 +11,24 @@
     <div class="row">
         <div class="card col-md-3 text-center">
             <div class="card-body">
-                <h5>Orders: <%= @orders.length %></h5> <span><%= link_to  "( Manage )", orders_path, class: 'card-link' %></span>
-                 <br>
+                <h5>Orders: <%= @orders.length %></h5><%= link_to  "( Manage )", orders_path, class: 'card-link' %>
+                 
                 
             </div>
         </div>
         <div class="card col-md-3 text-center">
             <div class="card-body">
-                <h5>Categories</h5> <%= @categories.length %>
+                <h5>Categories: <%= @categories.length %></h5>  <%= link_to  "( Manage )", categories_path, class: 'card-link' %>
             </div>
         </div>
         <div class="card col-md-3 text-center">
             <div class="card-body">
-                <h5>Products</h5> <%= @products.length %>
+                <h5>Products: <%= @products.length %></h5>  <%= link_to  "( Manage )", products_path, class: 'card-link' %>
             </div>
         </div>
         <div class="card col-md-3 text-center">
             <div class="card-body">
-                <h5>Users</h5> <%= @users.length %>
+                <h5>Users: <%= @users.length %></h5> <%= link_to  "( Manage )", root_path, class: 'card-link' %>
             </div>
         </div>
     </div>

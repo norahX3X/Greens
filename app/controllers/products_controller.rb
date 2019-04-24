@@ -23,6 +23,59 @@ class ProductsController < ApplicationController
 
   end
  
+
+  def addCart
+    p "added"
+    # get user id and roduct id 
+    user_id = current_user.id
+    current_product = Product.find(params[:id])
+    # creat new care item
+    @cart_item = CartItem.create(cart_item_params) 
+    #get user cart
+    current_cart  = Cart.where(user_id: user_id).first
+    #check if exist
+    if current_cart
+      current_cart.items << @cart_item.id
+    else 
+      current_cart= Cart.create(total_items: 1,user_id: user_id)
+      current_cart.items << @cart_item.id
+    end
+    current_cart.save
+    redirect_to products_path if @cart_item.save
+    
+    # current_cart.add_item(params[:product_id])
+
+      # item = items.where('product_id = ?', product_id).first
+      # if item
+      #   # increase the quantity of product in cart
+      #   item.quantity + 1
+      #   save
+      # else
+      #   # product does not exist in cart
+      #   cart.items << Item.new(product_id: product_id, quantity: 1)
+      # end
+      # save
+    
+   
+    # redirect to shopping cart or whereever
+
+    # session[:product_id] = params[:product_id]
+    # @product = Product.find(params[:product_id])
+    # if session[:product_id].present?
+    #   @temp = OrderTemp.new
+    #   @temp.product_id = @product.id
+    #   @temp.price = @product.price
+    #   @temp.qty = 1
+    #   @temp.save
+    # end
+    # @count = OrderTemp.count
+    # render json: @count
+    
+    # redirect_to product_path(current_product)
+    # redirect_to products_path
+
+    end
+
   def new
     @product= Product.new
   end
