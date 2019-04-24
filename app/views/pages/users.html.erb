@@ -13,7 +13,7 @@
       <th scope="col">Last Name</th>
       <th scope="col">E-mail</th>
       <th scope="col">User ID</th>
-      <th scope="col">Is it admin?</th>
+      <th scope="col">Admin?</th>
     </tr>
   </thead>
   <tbody>
@@ -26,9 +26,9 @@
       <td><%= user.email %></td>
       <td><%= user.id %> </td>
       <td><% if user.admin  %>
-            Admin: Yes
+            Yes
             <% else %>
-            Admin: no 
+            No 
           <% end %> </td>
     </tr>
     <% end %>

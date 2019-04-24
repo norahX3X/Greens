@@ -15,8 +15,16 @@
 <div class="card mt-5">
     <div class="card-body">
         <h5 class="card-title">Shipping Info</h5>
-        address: <br>
-        city: <br>
+        <% @shipping_infos.each do |shipping_info| %>
+        <% if shipping_info.user_id == current_user.id %>
+        address: <%= shipping_info.adress %> <br>
+        Zip: <%= shipping_info.zip %> <br>
+        city: <%= shipping_info.city %><br>
+        Phone Number: <%= shipping_info.phone_num %> <br>
+        <%= link_to "Edit", edit_shipping_info_path(shipping_info), method: "edit" %>
+        <% end %>
+        <% end %>
+    
     </div>
 </div>
 </div>
