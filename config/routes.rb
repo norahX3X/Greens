@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  
   get 'carts/index'
   resources :categories
   resources :products
   devise_for :users
   root to: 'pages#home'
 
-
+  post 'products/:id/addCart/' => 'products#addCart', :as => 'addCart'
   resources :orders
   # post '/add_to_cart/:product_id' => 'carts#add_to_cart', :as => 'add_to_cart'
   # post 'addCart' => 'product#addCart'
