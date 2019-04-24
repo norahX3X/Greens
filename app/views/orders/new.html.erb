@@ -1,4 +1,13 @@
 <h1>Checkout </h1>
+
+ t.float "price"
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "order_id"
+    t.integer "product_id"
+
+ <%= form_for @order do |f| %>
 <div class="order_container">
 <h4>Cart</h4>
  <table class="table w-100" style="table-layout: fixed;">
@@ -28,6 +37,7 @@
       <td><%= product.price * current_item.amount %>$</td>
     </tr>
   </tbody>
+
  <% end %>
   <tfoot>
     <tr>
@@ -41,6 +51,10 @@
     </tr>
   </tfoot>
  </table>
+       <%= f.hidden_field :total, value: @total %>
+    <%= f.hidden_field :quantity, value: @current_cart_items.length %>
+        <%= f.hidden_field :user_id  , value: @user_id %>
+
  </div>
 
  <div class="order_container">
@@ -50,19 +64,24 @@
 <p>No shipmint info, Add one to continue </p>
 </div>
    <% @shipping_info.each do |info| %>
+
 <div class="input-group">
   <div class="input-group-prepend">
-    <div class="input-group-text">
-    <input type="radio" >
+   <div class="input-group-text">
+   <%= radio_button_tag 'info', info, @info == info%>
     </div>
-  </div>
+    </div>
       <p class="form-control">
       <%= info.adress%>
        /<%= info.city  %>
      Contact number: <%=  info.phone_num %> 
       </p>
+
 </div>
+
  <% end %>
+       <%= f.hidden_field :shipping_id,value: 1 %>
+
   <%= link_to 'Add shipment info ', shipping_infos_new_path %>
 
  </div>
@@ -96,6 +115,7 @@
           </div>
           
  </div>
-   <%= link_to 'CheckOut',  %>
+       <%= f.submit  %>
+   <% end %>
 
 

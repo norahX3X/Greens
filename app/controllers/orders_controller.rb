@@ -22,10 +22,11 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @order = Order.new
 
-    user_id = current_user.id
-    @current_cart_items= Cart.where(user_id: user_id).first.items
-    @shipping_info= ShippingInfo.where(user_id: user_id).last(5)
+    @user_id = current_user.id
+    @current_cart_items= Cart.where(user_id: @user_id).first.items
+    @shipping_info= ShippingInfo.where(user_id: @user_id).last(5)
     @total = 0 
     @first_cart_items= @current_cart_items.first(5)
 
@@ -42,12 +43,17 @@ class OrdersController < ApplicationController
     # product = Product.where(id: current_item.product_id).first 
     # end
   end
+  def create
+      order = Order.create(order_params)
+      p "placed order"
+      # redirect_to products_path
+  end 
 
   def edit
   end
 
   private 
     def order_params
-        params.require(:Order).permit( :total, :quantity , :shipping_id )
+        params.require(:Order).permit( :total, :quantity , :shipping_id , :user_id )
     end
 end
