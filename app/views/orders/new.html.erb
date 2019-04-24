@@ -1,2 +1,101 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<h1>Checkout </h1>
+<div class="order_container">
+<h4>Cart</h4>
+ <table class="table w-100" style="table-layout: fixed;">
+  <thead>
+    <tr>
+      <th scope="col">Item </th>
+      <th scope="col">Amount</th>
+      <th scope="col">Total Price</th>
+    </tr>
+  </thead>
+ 
+   <%  @first_cart_items.each do |item| %>
+
+<%  # item.product_id
+    current_item =  CartItem.where(id: item).first
+    
+    product = Product.where(id: current_item.product_id).first 
+    
+%>
+  <tbody>
+    <tr>
+      <th scope="row" class= "w-25"  style="align-content: space-around;"> 
+      <img src="<%=product.image%>" alt="" class= "float-left w-25 img-fluid" > 
+      <br>
+      <span style="padding-left: 5%;"  ><%= product.name %></span> </th>
+      <td><%= current_item.amount %></td>
+      <td><%= product.price * current_item.amount %>$</td>
+    </tr>
+  </tbody>
+ <% end %>
+  <tfoot>
+    <tr>
+      <th scope="row"> Total </th>
+            <td></td>
+
+      <td><%= @total %>$
+      <span  class= "float-right"> <%= link_to 'Show All', carts_index_path %> </span>
+      </td>
+
+    </tr>
+  </tfoot>
+ </table>
+ </div>
+
+ <div class="order_container">
+ <h4>Shipment Info </h4>
+
+<div class="tab-pane row <%= @shipping_info.length > 0 ? 'fade' : 'active' %>" id="tab-content-second">
+<p>No shipmint info, Add one to continue </p>
+</div>
+   <% @shipping_info.each do |info| %>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+    <input type="radio" >
+    </div>
+  </div>
+      <p class="form-control">
+      <%= info.adress%>
+       /<%= info.city  %>
+     Contact number: <%=  info.phone_num %> 
+      </p>
+</div>
+ <% end %>
+  <%= link_to 'Add shipment info ', shipping_infos_new_path %>
+
+ </div>
+
+
+ <div class="order_container">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+ </div>
+   <%= link_to 'CheckOut',  %>
+
+

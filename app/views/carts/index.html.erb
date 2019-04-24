@@ -1,16 +1,34 @@
-<h1>Carts#index</h1>
-
-
+<h1>Carts</h1>
+   <table class="table w-100" style="table-layout: fixed;">
+  <thead>
+    <tr>
+      <th scope="col">Item </th>
+      <th scope="col">Amount</th>
+      <th scope="col">Price for each</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
    <% @current_cart_items.each do |item| %>
+
 <%  # item.product_id
     current_item =  CartItem.where(id: item).first
     
     product = Product.where(id: current_item.product_id).first 
 %>
-<h4> product :  <%= current_item.product_id %><br> </h4>
-<h4> amount :<%= current_item.amount %><br> </h4>
-<h4> price: <%= product.price %><br> </h4>
-
+  <tbody>
+    <tr>
+      <th scope="row" style="align-content: space-around;"> 
+      <img src="<%=product.image%>" alt="" class= "float-left w-25 img-fluid" > 
+      <br>
+      <span style="padding-left: 5%;"  ><%= product.name %></span> </th>
+      <td><%= current_item.amount %></td>
+      <td><%= product.price %> $</td>
+      <td><i class="fa fa-trash"></i></td>
+    </tr>
+   
+  </tbody>
  <% end %>
+ </table>
+
   <p><%= link_to 'Place order', new_order_path() %> 
  </p>          

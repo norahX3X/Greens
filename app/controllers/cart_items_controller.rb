@@ -7,7 +7,8 @@ class CartItemsController < ApplicationController
      end
 
      def destroy
-       
+        # CartItem.delete_all
+    # redirect_to root_path
      end
  
      private
