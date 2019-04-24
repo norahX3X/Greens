@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     # get user id and roduct id 
     # if current_user
     user_id = current_user.id
-    p params[:id]
+    # p params[:id]
     current_product = Product.find(params[:id])
     # creat new care item
     @cart_item = CartItem.create(cart_item_params) 
@@ -37,12 +37,13 @@ class ProductsController < ApplicationController
     current_cart  = Cart.where(user_id: user_id).first
     #check if exist
     if current_cart
-      current_cart.items << @cart_item.id
+      current_cart.items << current_product.id #@cart_item.id
     else 
       current_cart= Cart.create(total_items: 1,user_id: user_id)
-      current_cart.items << @cart_item.id
+      current_cart.items << current_product.id
     end
-    # current_cart.save
+    current_cart.errors.full_messages
+    current_cart.save
     redirect_to products_path if @cart_item.save
   # end 
     # current_cart.add_item(params[:product_id])
