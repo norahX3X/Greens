@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 2019_04_24_082122) do
     t.integer "shipping_id"
   end
 
+  create_table "product_infos", force: :cascade do |t|
+    t.float "price"
+    t.integer "stack"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "product_id"
+    t.integer "seller_id"
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
