@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   def index
+
     user_id = current_user.id
     @current_cart_items= Cart.where(user_id: user_id).first.items
 

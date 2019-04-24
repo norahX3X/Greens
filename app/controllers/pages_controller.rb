@@ -14,4 +14,7 @@ class PagesController < ApplicationController
     @orders = Order.all
     @users = User.all
   end
+  def users
+    @users = User.all
+  end
 end

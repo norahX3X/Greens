@@ -9,11 +9,10 @@
 
 Product.destroy_all
 Category.destroy_all
+Cart.destroy_all
 CartItem.destroy_all
 
-
 fruite = Category.create(name: 'fruite')
-
 
 apple = Product.create(name: 'apple', image: 'https://banner2.kisspng.com/20171219/9ca/apple-png-5a38db4c51f685.1538687515136755963357.jpg', quantity: "10", category_id: fruite.id, stack: 10, price: 20.9 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 orange = Product.create(name: 'orange', image: 'https://www.rd.com/wp-content/uploads/2017/12/01_oranges_Finally%E2%80%94Here%E2%80%99s-Which-%E2%80%9COrange%E2%80%9D-Came-First-the-Color-or-the-Fruit_691064353_Lucky-Business-1024x683.jpg', quantity: 7, category_id: fruite.id, stack: 5, price: 10.9 , farm: "مزرعه الحمد", description: "مرره لذيذ")
@@ -39,9 +38,12 @@ seed = Category.create(name: 'seed')
 Wheat = Product.create(name: 'Wheat', image: 'https://1.bp.blogspot.com/-swVY1zLmOtY/W20Xynh07iI/AAAAAAAAEns/0a4Kv8XSE3E-Jd4P2e1C8s-VJJXkEFfuQCLcBGAs/s1600/%25D8%25AA%25D9%2581%25D8%25B3%25D9%258A%25D8%25B1%2B%25D8%25AD%25D9%2584%25D9%2585%2B%25D8%25B1%25D8%25A4%25D9%258A%25D8%25A9%2B%25D8%25B3%25D9%2586%25D8%25A7%25D8%25A8%25D9%2584%2B%25D9%2588%25D8%25AD%25D8%25A8%25D9%2588%25D8%25A8%2B%25D8%25A7%25D9%2584%25D9%2582%25D9%2585%25D8%25AD%2B%25D9%2581%25D9%2589%2B%25D8%25A7%25D9%2584%25D9%2585%25D9%2586%25D8%25A7%25D9%2585%2B%25D9%2584%25D8%25A7%25D8%25A8%25D9%2586%2B%25D8%25B3%25D9%258A%25D8%25B1%25D9%258A%25D9%2586.jpg', quantity: 4, category_id: seed.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 oats = Product.create(name: 'Oats', image: 'https://i.fatafeat.com/storage/attachments/21/27_nov_art2_196203_large.png', quantity: 4, category_id: seed.id,stack: 10, price: 20 , farm: "مزرعه الحمد", description: "مرره لذيذ")
 
+cart1 = Cart.create(total_items:1)
+cart_item1 = CartItem.create(cart_id:cart1.id, product_id:lettuce.id, amount: 1)
 
 shipping_add = ShippingInfo.create(user_id: 1, zip: 11543, adress:" najah al izz - Al Olaya " ,city: "Riyadh", phone_num: "0550585468" )
 
 order =Order.create(user_id: 1, total: 23 , quantity: 4 , shipping_id: shipping_add.id )
+
 OrderDetail.create(order_id: order.id , product_id: oats.id , price:12.5 , amount: 1 )
 OrderDetail.create(order_id: order.id , product_id: apple.id, price:0.5 , amount: 1 )
