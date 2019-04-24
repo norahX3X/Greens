@@ -11,7 +11,14 @@
 <h4> <%= @product.quantity %><br> </h4>
 
 <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
+ 
 
+ <%= form_for @cart_item, url: "#{@product.id}/addCart/"  do |f| %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+    <%= f.hidden_field :cart_id, value: 2 %>
+      <%= f.number_field :amount  , class:"input-text qty text" ,value: 1  , min: 1 ,  step: 1 %>
+      <%= f.submit %>
+   <% end %>
 
 <h4> Price: <%= @product.price %> RS<br> </h4>
 

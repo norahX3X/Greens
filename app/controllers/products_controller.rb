@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
     #get product paam
     @product=Product.find(params[:id])
     # get avilability from stack param 
+    @cart_item = CartItem.new
 
     @avilability = "Out Of Stack"
     # change colors too
@@ -24,13 +25,27 @@ class ProductsController < ApplicationController
 
   def addCart
     p "added"
+    # get user id and roduct id 
     user_id = current_user.id
-
     current_product = Product.find(params[:id])
+
     p current_product.id
-    cartItem = CartItem.new
-    cartItem.amount = 9
-    cartItem.save
+
+
+    @cart_item = CartItem.create(cart_item_params) 
+    p @cart_item
+
+        redirect_to products_path if @cart_item.save
+
+    # redirect_to products_path
+    # @cartItem = CartItem.new
+
+
+    # cartItem = CartItem.new()
+    # cartItem.amount = 9
+    # cartItem.save
+
+
     # current_cart = current_user.cart
     # current_cart.add_item(params[:product_id])
 
@@ -94,4 +109,7 @@ class ProductsController < ApplicationController
     def product_params
         params.require(:product).permit(:name, :image, :quantity, :category_id)
     end
+    def cart_item_params
+      params.require(:cart_item).permit(:product_id, :amount, :cart_id)
+   end
 end
