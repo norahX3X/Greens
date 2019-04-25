@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/profile' => 'pages#profile'
   get '/admin' => 'pages#admin'
   get '/users' => 'pages#users'
+  get '/confirmation' => 'pages#confirmation'
 end
