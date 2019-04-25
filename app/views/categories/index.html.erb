@@ -18,9 +18,12 @@
 <%end%>
 </div>
 
-<div class="new">
-<%= link_to 'Add New Category', new_category_path %>
-</div>
+<% if current_user && current_user.admin? %>
+
+<%= link_to 'Add New Category', new_category_path, class: 'btn btn-success float-right' %>
+
+<% end %>
+
 </div>
 
 

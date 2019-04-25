@@ -11,6 +11,7 @@ Product.destroy_all
 Category.destroy_all
 Cart.destroy_all
 CartItem.destroy_all
+Order.destroy_all
 
 fruite = Category.create(name: 'fruite')
 

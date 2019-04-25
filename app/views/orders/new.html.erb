@@ -1,12 +1,5 @@
 <h1>Checkout </h1>
 
- t.float "price"
-    t.integer "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "order_id"
-    t.integer "product_id"
-
  <%= form_for @order do |f| %>
 <div class="order_container">
 <h4>Cart</h4>
@@ -22,9 +15,15 @@
    <%  @first_cart_items.each do |item| %>
 
 <%  # item.product_id
-    current_item =  CartItem.where(id: item).first
     
+
+     current_item =  CartItem.where(id: item).first
+    if current_item
     product = Product.where(id: current_item.product_id).first 
+    else
+    current_item = CartItem.all.first
+    product = Product.where(id: current_item.product_id).first 
+    end
     
 %>
   <tbody>

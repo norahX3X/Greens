@@ -32,9 +32,13 @@ class OrdersController < ApplicationController
 
 
    @current_cart_items.each do |item| 
-        current_item =  CartItem.where(id: item).first
-        product = Product.where(id: current_item.product_id).first 
-         @total += product.price * current_item.amount
+    current_item =  CartItem.where(id: item).first
+    if current_item
+    product = Product.where(id: current_item.product_id).first 
+    else
+    current_item = CartItem.all.first
+    product = Product.where(id: current_item.product_id).first 
+    end
         end
       
 

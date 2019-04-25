@@ -12,8 +12,15 @@
 
 <%  # item.product_id
     current_item =  CartItem.where(id: item).first
-    
+    if current_item
     product = Product.where(id: current_item.product_id).first 
+    else
+    current_item = CartItem.all.first
+    product = Product.where(id: current_item.product_id).first 
+
+    # product = Product.all.first 
+    end
+
 %>
   <tbody>
     <tr>
