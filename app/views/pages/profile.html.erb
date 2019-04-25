@@ -3,11 +3,11 @@
             <div class="card-body">
             <h5 class="card-title">Personal Information</h5>
 
-        first name: <%= current_user.first_name %> <br>
-        last name: <%= current_user.last_name %> <br>
-        Email: <%= current_user.email %> <br>
-        Password: ****** <br>
-        Joining date: <%= current_user.created_at %> <br>
+        <span class="font-weight-bold">First Name:</span> <%= current_user.first_name %> <br>
+        <span class="font-weight-bold">Last Name:</span> <%= current_user.last_name %> <br>
+        <span class="font-weight-bold">Email:</span> <%= current_user.email %> <br>
+        <span class="font-weight-bold">Password:</span> ****** <br>
+        <span class="font-weight-bold">Joining Date:</span> <%= current_user.created_at %> <br>
         <%= link_to  "Edit", edit_user_registration_path %>
             </div>    
     </div>
@@ -17,11 +17,11 @@
         <h5 class="card-title">Shipping Info</h5>
         <% @shipping_infos.each do |shipping_info| %>
         <% if shipping_info.user_id == current_user.id %>
-        address: <%= shipping_info.adress %> <br>
-        Zip: <%= shipping_info.zip %> <br>
-        city: <%= shipping_info.city %><br>
-        Phone Number: <%= shipping_info.phone_num %> <br>
-        <%= link_to "Edit", edit_shipping_info_path(shipping_info), method: "edit" %>
+        <span class="font-weight-bold">Address:</span> <%= shipping_info.adress %> <br>
+        <span class="font-weight-bold">Zip Code:</span> <%= shipping_info.zip %> <br>
+        <span class="font-weight-bold">City:</span> <%= shipping_info.city %><br>
+        <span class="font-weight-bold">Phone Number:</span> <%= shipping_info.phone_num %> <br>
+        <%= link_to "Edit", edit_shipping_info_path(shipping_info) %>
         <% end %>
         <% end %>
     
